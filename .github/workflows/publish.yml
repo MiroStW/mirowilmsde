@@ -1,0 +1,29 @@
+name: Deploy to miro-wilms.de
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: install
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v4
+      - name: Install
+        shell: "bash"
+        run: npm install
+      - name: Build
+        shell: "bash"
+        run: npm run build
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: publish
+          FOLDER: dist
+          TARGET_DIR: ./
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
