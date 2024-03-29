@@ -1,35 +1,19 @@
 ---
-import { Card, CardDescription, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
+
 import Layout from '../layouts/Layout.astro';
 import '@/styles/globals.css'
+import miro_portrait from "@/components/portrait_miro.jpg"
+import { Image } from 'astro:assets';
+import SocialMedia from '@/components/SocialMedia.astro';
 ---
 
 <Layout title="Miro Wilms">
-	<main>
+	<Image src={miro_portrait} alt="Miro Portrait" class="rounded-full w-28 h-28" />
+		<h1 class="text-2xl font-semibold leading-normal my-8">Founder, Software developer, nerd at heart</h1>
+			<p class="leading-relaxed">
+				I'm Miro, an autodidact with a strong passion for tech. I love building products that last and create a measurable impact on the world. Both as a founder & developer, I enjoy breaking down complex topics into manageable chunks to build simple & beautiful solutions together with an exceptional team. After building and selling my startup trecker.com I rediscovered my passion for coding myself and now work as a professional developer.
+				</p>
 
-		<h1>Miro Wilms</h1>
-		<Card>
-			<CardHeader>
-				<CardTitle>Title</CardTitle>
-				<CardDescription>Description</CardDescription>
-			</CardHeader>
-			<CardContent>
-				Under construction 👷‍♀️!
-			</CardContent>
-			<CardFooter>Footer</CardFooter>
-		</Card>
+		<SocialMedia />
 
-	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-</style>

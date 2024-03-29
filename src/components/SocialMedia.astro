@@ -1,0 +1,20 @@
+---
+import linkedin from "@/components/linkedin.png"
+import github from "@/components/github.png"
+import email from "@/components/email.png"
+import { Image } from 'astro:assets';
+---
+
+<section class="flex flex-wrap gap-4 my-8">
+	<a href="mailto:miro@miro-wilms.de?subject=Hi">
+		<Image src={email} alt="email logo" class="w-8 h-8" />
+		</a>
+		<a href="https://www.linkedin.com/in/mirowilms/" target="_blank">
+
+			<Image src={linkedin} alt="linkedin logo" class="w-8 h-8" />
+		</a>
+		<a href="https://github.com/MiroStW" target="_blank">
+
+			<Image src={github} alt="github logo" class="w-8 h-8" />
+		</a>
+</section>
