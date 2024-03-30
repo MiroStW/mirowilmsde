@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: install
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: git-checkout
@@ -27,3 +27,11 @@ jobs:
           FOLDER: dist
           TARGET_DIR: ./
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: call webhook
+        run: |
+          curl -n ${{ secrets.WEBHOOK_URL }}
