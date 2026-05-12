@@ -27,3 +27,11 @@ jobs:
           FOLDER: dist
           TARGET_DIR: ./
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Plesk via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 202.61.232.229
+          username: hosting198196
+          password: ${{ secrets.PLESK_FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /miro-wilms.de/httpdocs/
